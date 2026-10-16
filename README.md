@@ -51,5 +51,3 @@ Autrice
 Martina Mazzaferro
 
 Studentessa di Informatica Umanistica presso l'Università di Pisa.
-
-Progetto universitario indipendente, realizzato a scopo didattico e non affiliato a Piaggio.
