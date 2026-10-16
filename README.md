@@ -42,10 +42,6 @@ Realizzazione di interfacce adattabili a diversi dispositivi.
 
 Utilizzo di JavaScript per migliorare l'interattività e l'esperienza utente.
 
-Visualizza il progetto
-
-Visita il sito Vespa Sei Giorni
-
 Autrice
 
 Martina Mazzaferro
