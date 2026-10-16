@@ -1,0 +1,3103 @@
+
+/* =========================================================
+   IMPOSTAZIONI GENERALI
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #111011;
+    color: #eee4cc;
+
+    font-family: "Times New Roman", Times, serif;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    position: relative;
+    z-index: 100;
+
+    width: 100%;
+    height: 115px;
+
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #211f20;
+
+    border-bottom: 1px solid #a77b26;
+}
+
+
+/* =========================================================
+   LOGO PULSANTE HOME
+   ========================================================= */
+
+.logo-home {
+    position: absolute;
+
+    left: 35px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 90px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    z-index: 100;
+}
+
+.logo-home img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    border: none;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.logo-home:hover img {
+    transform: scale(1.10);
+    opacity: 0.80;
+}
+
+
+/* =========================================================
+   MENU
+   ========================================================= */
+
+.menu {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    transform: translate(-55px);
+}
+
+.menu a {
+    padding: 12px 0;
+
+    color: #eee4cc;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.attivo {
+    color: #b58a35;
+}
+
+.separatore {
+    width: 1px;
+    height: 30px;
+
+    background-color: rgba(238, 228, 204, 0.45);
+}
+
+
+/* =========================================================
+   HOME
+   ========================================================= */
+
+.home {
+    position: relative;
+
+    min-height: calc(100vh - 115px);
+
+    padding: 35px 2.5% 45px 6%;
+
+    display: grid;
+    grid-template-columns: 1.55fr 0.95fr;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 35% 45%,
+            #292627 0%,
+            #211f20 50%,
+            #1f1d1d 100%
+        );
+}
+
+
+/* Effetti di profondità */
+
+.home::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.06),
+            rgba(0, 0, 0, 0.18)
+        );
+
+    opacity: 0.8;
+
+    pointer-events: none;
+}
+
+.home-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 25%,
+            rgba(0, 0, 0, 0.28) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* Contenuto */
+
+.home-contenuto {
+    position: relative;
+    z-index: 5;
+
+    padding-right: 60px;
+}
+
+.hero-contenuto {
+    max-width: 900px;
+
+    text-align: center;
+}
+
+
+/* Titolo principale */
+
+.hero-contenuto h1 {
+    color: #eee4cc;
+
+    font-size: clamp(75px, 7.3vw, 145px);
+    font-weight: 700;
+
+    line-height: 0.92;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.8);
+}
+
+
+/* Linea oro */
+
+.linea-titolo {
+    max-width: 530px;
+
+    margin: 40px auto 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.linea-titolo span {
+    flex: 1;
+
+    height: 2px;
+
+    background-color: #a77b26;
+}
+
+.rombo {
+    width: 22px;
+    height: 22px;
+
+    border: 2px solid #a77b26;
+
+    transform: rotate(45deg);
+}
+
+
+/* Sottotitolo */
+
+.hero-contenuto h2 {
+    color: #b58a35;
+
+    font-size: clamp(20px, 2vw, 32px);
+    font-weight: 700;
+
+    line-height: 1.5;
+
+    letter-spacing: 8px;
+
+    text-transform: uppercase;
+}
+
+
+/* Tricolore */
+
+.tricolore {
+    width: 350px;
+    height: 4px;
+
+    margin: 30px auto 38px;
+
+    display: flex;
+}
+
+.tricolore span {
+    flex: 1;
+}
+
+.tricolore .verde {
+    background-color: #168245;
+}
+
+.tricolore .bianco {
+    background-color: #eee9db;
+}
+
+.tricolore .rosso {
+    background-color: #a92722;
+}
+
+
+/* Testo Home */
+
+.testo-home {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.testo-home p {
+    margin-bottom: 14px;
+
+    color: #e6dcc5;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+}
+
+.testo-home strong {
+    color: #c39a4b;
+}
+
+
+/* Link scopri la storia */
+
+.scopri-storia {
+    display: inline-block;
+
+    margin-top: 25px;
+    padding-bottom: 8px;
+
+    color: #b58a35;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid #b58a35;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.scopri-storia span {
+    margin-left: 8px;
+}
+
+.scopri-storia:hover {
+    color: #eee4cc;
+    border-color: #eee4cc;
+}
+
+
+/* Manifesto */
+
+.manifesto-home {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cornice-manifesto {
+    width: min(100%, 470px);
+
+    padding: 7px;
+
+    background-color: #b18a47;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.75);
+
+    transform: rotate(-1.5deg);
+
+    transition: transform 0.4s ease;
+}
+
+.cornice-manifesto:hover {
+    transform: rotate(0deg) scale(1.015);
+}
+
+.cornice-manifesto img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+/* =========================================================
+   ANIMAZIONE HOME
+   ========================================================= */
+
+.hero-contenuto h1,
+.linea-titolo,
+.hero-contenuto h2,
+.tricolore,
+.testo-home,
+.scopri-storia {
+    opacity: 0;
+
+    transform: translateY(25px);
+}
+
+.hero-contenuto.animazione-attiva h1 {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+        opacity 1.1s ease,
+        transform 1.1s ease;
+}
+
+.hero-contenuto.animazione-attiva .linea-titolo {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+        opacity 1s ease 0.35s,
+        transform 1s ease 0.35s;
+}
+
+.hero-contenuto.animazione-attiva h2 {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+        opacity 1s ease 0.60s,
+        transform 1s ease 0.60s;
+}
+
+.hero-contenuto.animazione-attiva .tricolore {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+        opacity 1s ease 0.80s,
+        transform 1s ease 0.80s;
+}
+
+.hero-contenuto.animazione-attiva .testo-home {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+        opacity 1.1s ease 1s,
+        transform 1.1s ease 1s;
+}
+
+.hero-contenuto.animazione-attiva .scopri-storia {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+        opacity 1s ease 1.20s,
+        transform 1s ease 1.20s,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+/* ==========================================
+   COMPOSIZIONE MANIFESTI HOME
+========================================== */
+
+.manifesti-composizione {
+    position: relative;
+
+    width: 455px;
+    height: 565px;
+
+    transform: translateX(15px);
+}
+.manifesti-composizione .manifesto-ingrandito {
+    z-index: 10;
+
+    transform: translateX(8px) rotate(0deg) scale(1.035);
+}
+
+/* Regole comuni ai due manifesti */
+
+.manifesti-composizione .cornice-manifesto {
+    position: absolute;
+
+    padding: 7px;
+
+    background-color: #b18a47;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.75);
+
+    transition: transform 0.4s ease;
+
+    cursor: pointer;
+}
+
+
+/* Manifesto Six Day Racer */
+
+.manifesto-principale {
+    width: 320px;
+
+    top: 5px;
+    right: 5px;
+
+    z-index: 2;
+
+    transform: rotate(2deg);
+}
+
+
+/* Manifesto storico */
+
+.manifesto-secondario {
+    width: 335px;
+
+    top: 175px;
+    left: -20px;
+
+    z-index: 1;
+
+    transform: rotate(-4deg);
+}
+
+
+/* Immagini */
+
+.manifesti-composizione img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+/* =========================================================
+   PAGINA STORIA
+   ========================================================= */
+
+.pagina-storia-nuova {
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    color: #eee4cc;
+
+    background:
+        linear-gradient(
+            rgba(18, 17, 17, 0.78),
+            rgba(18, 17, 17, 0.88)
+        ),
+        url("../img/storia.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* =========================================================
+   APERTURA STORIA
+   ========================================================= */
+
+.storia-apertura {
+    width: 90%;
+    max-width: 1100px;
+    min-height: 650px;
+
+    margin: 0 auto;
+    padding: 120px 20px 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.storia-periodo {
+    margin-bottom: 25px;
+
+    color: #b8862b;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    letter-spacing: 6px;
+}
+
+.storia-apertura h1 {
+    margin: 0;
+
+    color: #eee4cc;
+
+    font-size: clamp(65px, 9vw, 125px);
+    font-weight: 700;
+
+    line-height: 0.95;
+
+    letter-spacing: 5px;
+}
+
+.linea-storia-titolo {
+    width: 430px;
+    max-width: 75%;
+
+    margin: 35px auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.linea-storia-titolo span {
+    flex: 1;
+
+    height: 1px;
+
+    background-color: #b8862b;
+}
+
+.rombo-storia {
+    width: 10px;
+    height: 10px;
+
+    margin: 0 15px;
+
+    border: 1px solid #b8862b;
+
+    transform: rotate(45deg);
+}
+
+.storia-apertura h2 {
+    margin: 0 0 40px;
+
+    color: #eee4cc;
+
+    font-size: 21px;
+    font-weight: 300;
+
+    letter-spacing: 6px;
+}
+
+.storia-apertura h2 strong {
+    color: #b8862b;
+
+    font-weight: 600;
+}
+
+.storia-introduzione {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    color: #ddd4c1;
+
+    font-size: 20px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
+.storia-timeline {
+    position: relative;
+
+    width: 92%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding: 80px 0 160px;
+}
+
+.storia-linea-verticale {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 50%;
+
+    width: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            #b8862b 3%,
+            #b8862b 97%,
+            transparent
+        );
+}
+
+
+/* =========================================================
+   CAPITOLI STORIA
+   ========================================================= */
+
+.capitolo-storia {
+    position: relative;
+
+    width: 50%;
+
+    margin-bottom: 150px;
+}
+
+.capitolo-sinistra {
+    padding-right: 75px;
+
+    text-align: right;
+}
+
+.capitolo-destra {
+    margin-left: 50%;
+
+    padding-left: 75px;
+
+    text-align: left;
+}
+
+
+/* Punti timeline */
+
+.punto-storia {
+    position: absolute;
+
+    top: 8px;
+
+    width: 13px;
+    height: 13px;
+
+    background-color: #1f1d1d;
+
+    border: 2px solid #b8862b;
+
+    transform: rotate(45deg);
+
+    z-index: 3;
+}
+
+.capitolo-sinistra .punto-storia {
+    right: -8px;
+}
+
+.capitolo-destra .punto-storia {
+    left: -8px;
+}
+
+.punto-importante {
+    width: 17px;
+    height: 17px;
+
+    background-color: #b8862b;
+}
+
+
+/* Date */
+
+.anno-storia {
+    display: block;
+
+    margin-bottom: 22px;
+
+    color: #b8862b;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    letter-spacing: 4px;
+}
+
+.anno-importante {
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   RIQUADRI CAPITOLI
+   ========================================================= */
+
+.contenuto-capitolo {
+    position: relative;
+
+    padding: 40px 42px;
+
+    background-color: rgba(20, 19, 19, 0.76);
+
+    border: 1px solid rgba(184, 134, 43, 0.30);
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.22);
+
+    backdrop-filter: blur(2px);
+}
+
+
+.contenuto-capitolo h2 {
+    margin: 0;
+
+    color: #eee4cc;
+
+    font-size: 37px;
+    font-weight: 600;
+
+    line-height: 1.08;
+
+    letter-spacing: 2px;
+}
+
+.linea-capitolo {
+    width: 80px;
+    height: 2px;
+
+    margin: 25px 0 30px;
+
+    background-color: #b8862b;
+}
+
+.capitolo-sinistra .linea-capitolo {
+    margin-left: auto;
+}
+
+.contenuto-capitolo p {
+    margin: 0 0 22px;
+
+    color: #ddd4c1;
+
+    font-size: 19px;
+
+    line-height: 1.85;
+}
+
+.contenuto-capitolo p:last-child {
+    margin-bottom: 0;
+}
+
+.contenuto-capitolo p strong {
+    color: #f1dfb4;
+}
+
+
+/* Etichette */
+
+.etichetta-oro {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    padding: 7px 13px;
+
+    color: #b8862b;
+
+    border: 1px solid #b8862b;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   DATI STORICI
+   ========================================================= */
+
+.dato-storico {
+    margin: 35px 0;
+
+    padding: 25px 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    border-top: 1px solid rgba(184, 134, 43, 0.5);
+    border-bottom: 1px solid rgba(184, 134, 43, 0.5);
+}
+
+.dato-storico strong {
+    color: #b8862b;
+
+    font-size: 42px;
+    font-weight: 500;
+}
+
+.dato-storico span {
+    color: #eee4cc;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.dato-divisore {
+    width: 1px;
+    height: 45px;
+
+    margin: 0 10px;
+
+    background-color: rgba(184, 134, 43, 0.45);
+}
+
+
+/* Citazione */
+
+.contenuto-capitolo blockquote {
+    margin: 40px 0 5px;
+
+    padding: 25px 0;
+
+    color: #b8862b;
+
+    border-top: 1px solid rgba(184, 134, 43, 0.5);
+    border-bottom: 1px solid rgba(184, 134, 43, 0.5);
+
+    font-size: 23px;
+    font-style: italic;
+
+    line-height: 1.5;
+}
+
+
+/* Capitoli importanti */
+
+.capitolo-importante {
+    background-color: rgba(17, 16, 16, 0.82);
+
+    border-color: rgba(184, 134, 43, 0.55);
+}
+
+.capitolo-trionfo {
+    background-color: rgba(15, 14, 14, 0.88);
+
+    border-color: rgba(184, 134, 43, 0.75);
+}
+
+
+/* Numeri trionfo */
+
+.numeri-trionfo {
+    display: flex;
+
+    margin: 35px 0;
+
+    border-top: 1px solid rgba(184, 134, 43, 0.45);
+    border-bottom: 1px solid rgba(184, 134, 43, 0.45);
+}
+
+.numeri-trionfo div {
+    width: 50%;
+
+    padding: 25px 10px;
+
+    text-align: center;
+}
+
+.numeri-trionfo div:first-child {
+    border-right: 1px solid rgba(184, 134, 43, 0.45);
+}
+
+.numeri-trionfo strong {
+    display: block;
+
+    color: #b8862b;
+
+    font-size: 48px;
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+.numeri-trionfo span {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #eee4cc;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+
+/* Medaglie */
+
+.medaglie {
+    margin: 40px 0;
+
+    padding: 32px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    border: 1px solid #b8862b;
+
+    background-color: rgba(184, 134, 43, 0.05);
+}
+
+.medaglie strong {
+    color: #b8862b;
+
+    font-size: 95px;
+    font-weight: 500;
+
+    line-height: 0.8;
+}
+
+.medaglie span {
+    color: #eee4cc;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    line-height: 1.4;
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================================================
+   CHIUSURA STORIA
+   ========================================================= */
+
+.nascita-sei-giorni {
+    position: relative;
+
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 70px 20px 120px;
+
+    text-align: center;
+}
+
+.nascita-sei-giorni > span {
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: #b8862b;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    letter-spacing: 6px;
+}
+
+.nascita-sei-giorni h2 {
+    margin: 0 0 10px;
+
+    color: #eee4cc;
+
+    font-size: 22px;
+    font-weight: 300;
+
+    letter-spacing: 8px;
+}
+
+.nascita-sei-giorni h1 {
+    margin: 0;
+
+    color: #eee4cc;
+
+    font-size: clamp(65px, 9vw, 120px);
+    font-weight: 700;
+
+    line-height: 0.88;
+
+    letter-spacing: 3px;
+}
+
+.linea-finale {
+    width: 420px;
+    max-width: 75%;
+
+    margin: 50px auto;
+
+    display: flex;
+    align-items: center;
+}
+
+.linea-finale span {
+    flex: 1;
+
+    height: 1px;
+
+    background-color: #b8862b;
+}
+
+.rombo-finale {
+    width: 10px;
+    height: 10px;
+
+    margin: 0 15px;
+
+    border: 1px solid #b8862b;
+
+    transform: rotate(45deg);
+}
+
+.nascita-sei-giorni p {
+    max-width: 780px;
+
+    margin: 0 auto 25px;
+
+    color: #ddd4c1;
+
+    font-size: 19px;
+
+    line-height: 1.9;
+}
+
+.nascita-sei-giorni .frase-finale {
+    margin-top: 50px;
+
+    color: #eee4cc;
+
+    font-size: 21px;
+    font-style: italic;
+}
+
+
+/* =========================================================
+   ANIMAZIONI STORIA
+   ========================================================= */
+
+.storia-apertura {
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 1.4s ease,
+        transform 1.4s ease;
+}
+
+.storia-apertura.storia-apertura-visibile {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.capitolo-storia {
+    opacity: 0;
+
+    transform: translateY(45px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+.capitolo-storia.capitolo-visibile {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.nascita-sei-giorni {
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s ease;
+}
+
+.nascita-sei-giorni.finale-visibile {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+/* =========================================================
+   PAGINA MODELLI
+   ========================================================= */
+
+.pagina-modelli {
+    min-height: 100vh;
+
+    background-color: #1f1d1d;
+
+    color: #eee4cc;
+}
+
+
+/* =========================================================
+   APERTURA MODELLI
+   ========================================================= */
+
+.modelli-apertura {
+    width: 100%;
+
+    padding: 90px 0 0;
+
+    text-align: center;
+}
+
+.modelli-titolo {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+}
+
+.modelli-periodo {
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: #b8862b;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    letter-spacing: 6px;
+}
+
+.modelli-apertura h1 {
+    margin: 0;
+
+    color: #eee4cc;
+
+    font-size: 92px;
+    font-weight: 600;
+
+    line-height: 1;
+
+    letter-spacing: 6px;
+}
+
+
+/* Linea oro */
+
+.linea-modelli-titolo {
+    width: 420px;
+    max-width: 70%;
+
+    margin: 30px auto;
+
+    display: flex;
+    align-items: center;
+}
+
+.linea-modelli-titolo span {
+    flex: 1;
+
+    height: 1px;
+
+    background-color: #b8862b;
+}
+
+.rombo-modelli {
+    width: 9px;
+    height: 9px;
+
+    margin: 0 14px;
+
+    border: 1px solid #b8862b;
+
+    transform: rotate(45deg);
+}
+
+
+/* Sottotitolo */
+
+.modelli-apertura h2 {
+    margin: 0 0 25px;
+
+    color: #eee4cc;
+
+    font-size: 18px;
+    font-weight: 300;
+
+    letter-spacing: 5px;
+}
+
+.modelli-apertura h2 strong {
+    color: #b8862b;
+
+    font-weight: 500;
+}
+
+.modelli-apertura p {
+    max-width: 760px;
+
+    margin: 0 auto 25px;
+
+    color: #d8cfbd;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   IMMAGINE INTRODUTTIVA
+   ========================================================= */
+
+.hero-modelli {
+    width: 88%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+
+    line-height: 0;
+
+    background-color: #1f1d1d;
+}
+
+.hero-modelli img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   SELEZIONA UN MODELLO
+   ========================================================= */
+
+.modelli-invito {
+    display: block;
+
+    margin: 30px 0 40px;
+
+    color: #b8862b;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    letter-spacing: 5px;
+}
+
+
+/* =========================================================
+   ELENCO MODELLI
+   ========================================================= */
+
+.elenco-modelli {
+    width: 88%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding-bottom: 110px;
+}
+
+.modello {
+    border-top: 1px solid rgba(184, 134, 43, 0.45);
+}
+
+.modello:last-child {
+    border-bottom: 1px solid rgba(184, 134, 43, 0.45);
+}
+
+
+/* =========================================================
+   INTESTAZIONE TENDINA
+   ========================================================= */
+
+.modello-intestazione {
+    min-height: 120px;
+
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+.modello-intestazione:hover {
+    background-color: rgba(184, 134, 43, 0.07);
+}
+
+.numero-modello {
+    width: 65px;
+
+    color: rgba(184, 134, 43, 0.70);
+
+    font-size: 15px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.anno-modello {
+    width: 150px;
+
+    color: #b8862b;
+
+    font-size: 27px;
+    font-weight: 500;
+
+    letter-spacing: 3px;
+}
+
+.modello-intestazione h2 {
+    flex: 1;
+
+    margin: 0;
+
+    color: #eee4cc;
+
+    font-size: 27px;
+    font-weight: 400;
+
+    letter-spacing: 2px;
+}
+
+.modello-intestazione h2 strong {
+    color: #b8862b;
+
+    font-weight: 500;
+}
+
+
+/* Pulsante + */
+
+.pulsante-modello {
+    width: 50px;
+    height: 50px;
+
+    padding: 0;
+
+    flex-shrink: 0;
+
+    border: 1px solid #b8862b;
+    border-radius: 50%;
+
+    background-color: transparent;
+
+    color: #b8862b;
+
+    font-family: "Times New Roman", Times, serif;
+    font-size: 29px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.modello-intestazione:hover .pulsante-modello {
+    background-color: #b8862b;
+
+    color: #1f1d1d;
+}
+
+
+/* Modello aperto */
+
+.modello.aperto .modello-intestazione {
+    background-color: rgba(184, 134, 43, 0.07);
+}
+
+.modello.aperto .pulsante-modello {
+    background-color: #b8862b;
+
+    color: #1f1d1d;
+
+    transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   CONTENUTO TENDINA
+   ========================================================= */
+
+.contenuto-modello {
+    display: none;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    background-color: #000000;
+
+    border-top: 1px solid rgba(184, 134, 43, 0.18);
+}
+
+.modello.aperto .contenuto-modello {
+    display: block;
+}
+
+
+/* =========================================================
+   SCHEDA MODELLO
+   ========================================================= */
+
+.scheda-modello {
+    width: 100%;
+    min-height: 600px;
+
+    padding: 55px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 70px;
+
+    background-color: #000000;
+}
+
+
+/* Foto */
+
+.foto-modello {
+    width: 50%;
+    height: 520px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background-color: #000000;
+}
+
+.foto-modello img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    background-color: #000000;
+
+    transition: transform 0.7s ease;
+}
+
+.foto-modello img:hover {
+    transform: scale(1.02);
+}
+
+
+/* Testo */
+
+.testo-modello {
+    width: 50%;
+}
+
+.etichetta-modello {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #b8862b;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    letter-spacing: 4px;
+}
+
+.testo-modello h3 {
+    max-width: 520px;
+
+    margin: 0;
+
+    color: #eee4cc;
+
+    font-size: 38px;
+    font-weight: 500;
+
+    line-height: 1.15;
+
+    letter-spacing: 2px;
+}
+
+.linea-modello {
+    width: 75px;
+    height: 2px;
+
+    margin: 26px 0 30px;
+
+    background-color: #b8862b;
+}
+
+.testo-modello p {
+    margin: 0 0 18px;
+
+    color: #d8cfbd;
+
+    font-size: 18px;
+
+    line-height: 1.75;
+}
+
+.testo-modello p:last-child {
+    margin-bottom: 0;
+}
+
+.testo-modello p strong {
+    color: #eee4cc;
+}
+
+
+/* =========================================================
+   FINALE MODELLI
+   ========================================================= */
+
+.modelli-finale {
+    padding: 115px 20px 135px;
+
+    text-align: center;
+
+    background-color: #181717;
+
+    border-top: 1px solid rgba(184, 134, 43, 0.25);
+}
+
+.modelli-finale > span {
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: #b8862b;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    letter-spacing: 5px;
+}
+
+.modelli-finale h2 {
+    margin: 0;
+
+    color: #eee4cc;
+
+    font-size: 45px;
+    font-weight: 300;
+
+    line-height: 1.25;
+
+    letter-spacing: 4px;
+}
+
+.modelli-finale h2 strong {
+    color: #b8862b;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   ANIMAZIONI MODELLI
+   ========================================================= */
+
+.modelli-titolo {
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.modelli-titolo.modelli-titolo-visibile {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.modelli-invito {
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.modelli-invito.invito-visibile {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.modello {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.modello.modello-visibile {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+/* =========================================================
+   RESPONSIVE GENERALE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .header {
+        height: auto;
+        min-height: 100px;
+
+        padding: 15px 4%;
+    }
+
+    .menu {
+        gap: 18px;
+    }
+
+    .menu a {
+        font-size: 13px;
+
+        letter-spacing: 1px;
+    }
+
+    .home {
+        grid-template-columns: 1.3fr 0.7fr;
+
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .home-contenuto {
+        padding-right: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE HOME / HEADER
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .header {
+        min-height: auto;
+
+        padding: 15px 4%;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .logo-home {
+        position: relative;
+
+        left: auto;
+        top: auto;
+
+        width: 65px;
+        height: 65px;
+
+        transform: none;
+    }
+
+    .menu {
+        width: 100%;
+
+        flex-wrap: wrap;
+
+        gap: 12px 18px;
+
+        padding-bottom: 10px;
+    }
+
+    .separatore {
+        display: none;
+    }
+
+    .home {
+        display: block;
+
+        min-height: auto;
+
+        padding: 70px 7% 100px;
+    }
+
+    .home-contenuto {
+        padding-right: 0;
+    }
+
+    .hero-contenuto {
+        margin: 0 auto;
+    }
+
+    .hero-contenuto h1 {
+        font-size: 65px;
+    }
+
+    .hero-contenuto h2 {
+        font-size: 18px;
+
+        letter-spacing: 4px;
+    }
+
+    .tricolore {
+        width: 250px;
+    }
+
+    .manifesto-home {
+        margin-top: 70px;
+    }
+
+    .manifesti-composizione {
+        transform: none;
+        margin: 0 auto;
+    }
+
+    .cornice-manifesto {
+        width: min(90%, 430px);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE STORIA
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    /* STORIA - sfondo più visibile su tablet e smartphone */
+    .pagina-storia-nuova {
+        background:
+            linear-gradient(
+                rgba(18, 17, 17, 0.68),
+                rgba(18, 17, 17, 0.78)
+            ),
+            url("../img/storia.jpg");
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+    }
+
+
+
+    .hero-modelli {
+        width: 92%;
+    }
+
+    .hero-modelli img {
+        max-height: 440px;
+    }
+
+    .pagina-storia-nuova {
+        background-attachment: scroll;
+    }
+
+    .storia-apertura {
+        min-height: auto;
+
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .storia-apertura h2 {
+        font-size: 16px;
+
+        letter-spacing: 3px;
+    }
+
+    .storia-introduzione {
+        font-size: 17px;
+    }
+
+    .storia-timeline {
+        width: 90%;
+
+        padding-left: 30px;
+    }
+
+    .storia-linea-verticale {
+        left: 0;
+    }
+
+    .capitolo-storia {
+        width: 100%;
+
+        margin-left: 0;
+        margin-bottom: 90px;
+
+        padding-left: 45px;
+        padding-right: 0;
+
+        text-align: left;
+    }
+
+    .capitolo-sinistra .punto-storia,
+    .capitolo-destra .punto-storia {
+        left: -8px;
+        right: auto;
+    }
+
+    .capitolo-sinistra .linea-capitolo {
+        margin-left: 0;
+    }
+
+    .contenuto-capitolo {
+        padding: 30px 25px;
+    }
+
+    .contenuto-capitolo h2 {
+        font-size: 30px;
+    }
+
+    .contenuto-capitolo p {
+        font-size: 17px;
+    }
+
+    .dato-storico {
+        flex-wrap: wrap;
+    }
+
+    .medaglie strong {
+        font-size: 70px;
+    }
+
+    .medaglie span {
+        font-size: 13px;
+
+        letter-spacing: 2px;
+    }
+
+    .nascita-sei-giorni {
+        padding-top: 100px;
+        padding-bottom: 120px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE MODELLI
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .modelli-apertura {
+        padding-top: 70px;
+    }
+
+    .modelli-apertura h1 {
+        font-size: 55px;
+    }
+
+    .linea-modelli-titolo {
+        width: 300px;
+    }
+
+    .modelli-apertura h2 {
+        font-size: 14px;
+
+        letter-spacing: 3px;
+    }
+
+    .modelli-apertura p {
+        width: 88%;
+
+        margin-bottom: 20px;
+
+        font-size: 16px;
+    }
+
+    .modelli-invito {
+        margin: 30px 0 40px;
+    }
+
+    .elenco-modelli {
+        width: 92%;
+    }
+
+    .modello-intestazione {
+        min-height: 100px;
+
+        padding: 12px 10px;
+    }
+
+    .numero-modello {
+        display: none;
+    }
+
+    .anno-modello {
+        width: 80px;
+
+        font-size: 19px;
+    }
+
+    .modello-intestazione h2 {
+        padding-right: 10px;
+
+        font-size: 16px;
+    }
+
+    .pulsante-modello {
+        width: 40px;
+        height: 40px;
+
+        font-size: 24px;
+    }
+
+    .scheda-modello {
+        min-height: auto;
+
+        padding: 35px 20px 50px;
+
+        flex-direction: column;
+
+        gap: 35px;
+    }
+
+    .foto-modello {
+        width: 100%;
+        height: 430px;
+    }
+
+    .testo-modello {
+        width: 100%;
+    }
+
+    .testo-modello h3 {
+        font-size: 29px;
+    }
+
+    .testo-modello p {
+        font-size: 17px;
+    }
+
+    .modelli-finale {
+        padding: 90px 20px 105px;
+    }
+
+    .modelli-finale h2 {
+        font-size: 32px;
+    }
+
+}
+
+
+/* =========================================================
+   SCHERMI MOLTO PICCOLI
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    /* STORIA - titoli adattati agli schermi piccoli */
+    .contenuto-capitolo h2 {
+        font-size: 24px;
+        line-height: 1.12;
+        letter-spacing: 0.5px;
+        overflow-wrap: normal;
+        word-break: normal;
+        hyphens: none;
+    }
+
+    .etichetta-oro {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .anno-storia {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+
+
+
+    .hero-modelli {
+        width: 92%;
+    }
+
+    .hero-modelli img {
+        max-height: 320px;
+    }
+
+    .menu {
+        gap: 8px 12px;
+    }
+
+    .menu a {
+        font-size: 12px;
+
+        letter-spacing: 0.5px;
+    }
+
+    .hero-contenuto h1 {
+        font-size: 48px;
+    }
+
+    .hero-contenuto h2 {
+        font-size: 15px;
+
+        letter-spacing: 3px;
+    }
+
+    .tricolore {
+        width: 200px;
+    }
+
+    .storia-apertura h1 {
+        font-size: 55px;
+    }
+
+    .storia-apertura h2 {
+        font-size: 14px;
+
+        letter-spacing: 2px;
+    }
+
+    .storia-timeline {
+        padding-left: 20px;
+    }
+
+    .capitolo-storia {
+        padding-left: 30px;
+    }
+
+    .contenuto-capitolo {
+        padding: 25px 20px;
+    }
+
+    .medaglie {
+        gap: 15px;
+
+        padding: 25px 10px;
+    }
+
+    .medaglie strong {
+        font-size: 55px;
+    }
+
+    .nome-finale {
+        letter-spacing: 5px;
+    }
+
+    .modelli-apertura h1 {
+        font-size: 45px;
+
+        letter-spacing: 4px;
+    }
+
+    .anno-modello {
+        width: 65px;
+
+        font-size: 17px;
+    }
+
+    .modello-intestazione h2 {
+        font-size: 14px;
+    }
+
+    .foto-modello {
+        height: 330px;
+    }
+
+}
+/* =========================================================
+   PAGINA ABOUT ME
+   ========================================================= */
+
+.pagina-about {
+    min-height: 100vh;
+    background-color: #1f1d1d;
+    color: #eee4cc;
+}
+
+
+/* =========================================================
+   APERTURA
+   ========================================================= */
+
+.about-apertura {
+    padding: 70px 8% 65px;
+
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.about-apertura.about-visibile {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-apertura h1 {
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    color: #eee4cc;
+
+    font-size: 72px;
+    font-weight: 600;
+
+    line-height: 1.05;
+
+    letter-spacing: 5px;
+}
+
+
+.about-apertura h1 strong {
+    color: #b8862b;
+    font-weight: 600;
+}
+
+
+/* LINEA APERTURA */
+
+.linea-about {
+    width: 450px;
+
+    margin: 32px auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+}
+
+.linea-about span {
+    flex: 1;
+
+    height: 1px;
+
+    background-color: #b8862b;
+}
+
+.rombo-about {
+    width: 9px;
+    height: 9px;
+
+    flex-shrink: 0;
+
+    background-color: transparent;
+    border: 1px solid #b8862b;
+
+    transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   STORIA PERSONALE
+   ========================================================= */
+
+.about-storia {
+    width: 84%;
+    max-width: 1300px;
+
+    margin: 0 auto 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 70px;
+}
+
+
+/* FOTO */
+
+.about-foto {
+    width: 46%;
+
+    display: flex;
+    justify-content: center;
+
+    opacity: 0;
+    transform: translateX(-40px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.about-foto img {
+    display: block;
+
+    width: 82%;
+    height: auto;
+
+    border: 7px solid #b8862b;
+
+    box-sizing: border-box;
+}
+
+
+/* TESTO */
+
+.about-testo {
+    width: 54%;
+
+    opacity: 0;
+    transform: translateX(40px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.about-foto.about-visibile,
+.about-testo.about-visibile {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-testo p {
+    margin: 0 0 20px;
+
+    color: #d8cfbd;
+
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.about-testo p strong {
+    color: #eee4cc;
+}
+
+
+/* =========================================================
+   BLOCCO COMPLETO RESTAURO
+   ========================================================= */
+
+.blocco-restauro {
+    width: 84%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding: 0 0 35px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LINEA SUPERIORE RESTAURO
+   ========================================================= */
+
+.linea-restauro {
+    width: 100%;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+.linea-restauro span {
+    flex: 1;
+
+    height: 1px;
+
+    background-color: rgba(184, 134, 43, 0.55);
+}
+
+
+/* =========================================================
+   TITOLO RESTAURO
+   ========================================================= */
+
+.about-restauro {
+    padding: 0 0 15px;
+
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.about-restauro.about-visibile {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-restauro h2 {
+    margin: 0;
+
+    color: #b8862b;
+
+    font-size: 36px;
+    font-weight: 400;
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================================================
+   GALLERY RESTAURO
+   ========================================================= */
+
+.gallery-restauro {
+    width: 100%;
+
+    margin: 0 auto;
+
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.gallery-restauro.about-visibile {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+    Mantiene uno spazio costante per le fotografie
+   durante il cambio delle immagini
+   ========================================================= */
+
+.carosello-restauro {
+    width: 100%;
+    height: 430px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   COPPIA DI FOTOGRAFIE
+   ========================================================= */
+
+.coppia-restauro {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   SPAZIO RISERVATO ALLA SINGOLA FOTO
+   ========================================================= */
+
+.foto-gallery {
+    width: 370px;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* FOTO NON TAGLIATE E NON DEFORMATE */
+
+.foto-gallery img {
+    display: block;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    width: auto;
+    height: auto;
+
+    border: 1px solid #b8862b;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONTROLLI
+   ========================================================= */
+
+.controlli-gallery {
+    margin-top: 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+/* NUMERO FOTO */
+
+#numero-foto {
+    color: #d8cfbd;
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   RIGA FRECCE CON TASTO AUTOMATICO
+   ========================================================= */
+
+.comandi-gallery {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 150px;
+}
+
+
+/* =========================================================
+   FRECCE
+   ========================================================= */
+
+.freccia-gallery {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border: 1px solid #b8862b;
+
+    background-color: transparent;
+    color: #b8862b;
+
+    font-family: "Times New Roman", Times, serif;
+    font-size: 24px;
+
+    cursor: pointer;
+}
+
+.freccia-gallery:hover {
+    background-color: #b8862b;
+    color: #1f1d1d;
+}
+
+
+/* =========================================================
+   AUTOMATICO
+   ========================================================= */
+
+#automatico-gallery {
+    padding: 12px 24px;
+
+    border: 1px solid #b8862b;
+
+    background-color: transparent;
+    color: #eee4cc;
+
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+}
+
+#automatico-gallery:hover {
+    background-color: #b8862b;
+    color: #1f1d1d;
+}
+
+
+/* =========================================================
+   IL PROGETTO
+   ========================================================= */
+
+.about-progetto {
+    width: 84%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding: 0 0 80px;
+
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.about-progetto.about-visibile {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* LINEA SOTTO IL RESTAURO */
+
+.linea-progetto {
+    width: 100%;
+    height: 1px;
+
+    margin-bottom: 55px;
+
+    background-color: rgba(184, 134, 43, 0.55);
+}
+
+
+.about-progetto h2 {
+    margin: 0 0 40px;
+
+    color: #b8862b;
+
+    font-size: 40px;
+    font-weight: 400;
+
+    letter-spacing: 4px;
+}
+
+.testo-progetto {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    text-align: left;
+}
+
+.testo-progetto p {
+    margin: 0 0 18px;
+
+    color: #d8cfbd;
+
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FIRMA
+   ========================================================= */
+
+.firma-about {
+    margin-top: 65px;
+    padding-top: 30px;
+
+    border-top: 1px solid rgba(184, 134, 43, 0.25);
+
+    color: #d8cfbd;
+
+    font-size: 16px;
+
+    letter-spacing: 1px;
+}
+
+.firma-about strong {
+    color: #b8862b;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   VALIDAZIONE
+   ========================================================= */
+
+.validazione {
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.validazione a {
+    padding: 8px 14px;
+
+    border: 1px solid #b8862b;
+
+    color: #b8862b;
+    background-color: transparent;
+
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    text-decoration: none;
+}
+
+.validazione a:hover {
+    background-color: #b8862b;
+    color: #1f1d1d;
+}
+
+
+                        /*DA QUESTO PUNTO SONO PRESENTI LE REGOLE RESPONSIVE  PER ADATTARE IL SITO ALLE DIVERSE DIMENSIONI DELLO SCHERMO*/
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media screen and (max-width: 1100px) {
+
+    .about-storia {
+        width: 88%;
+        gap: 45px;
+    }
+
+    .about-foto img {
+        width: 90%;
+    }
+
+    .blocco-restauro {
+        width: 90%;
+    }
+
+    .foto-gallery {
+        width: 350px;
+    }
+
+    .comandi-gallery {
+        gap: 100px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET PICCOLO
+   ========================================================= */
+
+@media screen and (max-width: 900px) {
+
+    .about-apertura h1 {
+        font-size: 55px;
+    }
+
+    .about-storia {
+        width: 84%;
+
+        flex-direction: column;
+
+        gap: 45px;
+    }
+
+    .about-foto,
+    .about-testo {
+        width: 100%;
+    }
+
+    .about-foto img {
+        width: 70%;
+    }
+
+    .about-testo {
+        text-align: center;
+    }
+
+
+    /* RESTAURO */
+
+    .carosello-restauro {
+        height: 400px;
+    }
+
+    .foto-gallery {
+        width: 300px;
+    }
+
+    .coppia-restauro {
+        gap: 15px;
+    }
+
+    .comandi-gallery {
+        gap: 60px;
+    }
+
+    .freccia-gallery {
+        width: 43px;
+        height: 43px;
+
+        font-size: 21px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - SMARTPHONE
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+    .about-apertura {
+        padding: 65px 6% 55px;
+    }
+
+    .about-apertura h1 {
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+
+    .linea-about {
+        width: 85%;
+    }
+
+
+    /* STORIA */
+
+    .about-storia {
+        width: 90%;
+
+        margin-bottom: 70px;
+    }
+
+    .about-foto img {
+        width: 90%;
+        border-width: 5px;
+    }
+
+    .about-testo p {
+        font-size: 18px;
+    }
+
+
+    /* RESTAURO */
+
+    .blocco-restauro {
+        width: 92%;
+    }
+
+    .about-restauro h2 {
+        font-size: 30px;
+    }
+
+
+    /* SU SMARTPHONE LE FOTO VANNO UNA SOPRA L'ALTRA */
+
+    .carosello-restauro {
+        height: 590px;
+    }
+
+    .coppia-restauro {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .foto-gallery {
+        width: 270px;
+        height: 48%;
+    }
+
+
+    /* CONTROLLI */
+
+    .comandi-gallery {
+        gap: 22px;
+    }
+
+    .freccia-gallery {
+        width: 38px;
+        height: 38px;
+
+        font-size: 19px;
+    }
+
+    #automatico-gallery {
+        padding: 10px 13px;
+
+        font-size: 10px;
+
+        letter-spacing: 1px;
+    }
+
+
+    /* PROGETTO */
+
+    .about-progetto {
+        width: 90%;
+    }
+
+    .about-progetto h2 {
+        font-size: 32px;
+    }
+
+    .testo-progetto p {
+        font-size: 16px;
+    }
+
+    .firma-about {
+        font-size: 14px;
+    }
+
+}
+.scopri-modelli {
+    display: inline-block;
+    margin-top: 35px;
+    padding-bottom: 8px;
+
+    color: #b58a35;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    text-decoration: none;
+    border-bottom: 1px solid #b58a35;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.scopri-modelli:visited {
+    color: #b58a35;
+}
+
+.scopri-modelli span {
+    margin-left: 8px;
+}
+
+.scopri-modelli:hover {
+    color: #eee4cc;
+    border-color: #eee4cc;
+}
+.scopri-about {
+    display: inline-block;
+    margin-top: 35px;
+    padding-bottom: 8px;
+
+    color: #b58a35;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    text-decoration: none;
+    border-bottom: 1px solid #b58a35;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.scopri-about:visited {
+    color: #b58a35;
+}
+
+.scopri-about span {
+    margin-left: 8px;
+}
+
+.scopri-about:hover {
+    color: #eee4cc;
+    border-color: #eee4cc;
+}
+.testo-progetto a,
+.testo-progetto a:visited {
+    color: #b58a35;
+    text-decoration: none;
+}
+
+.testo-progetto a:hover {
+    color: #eee4cc;
+}
+/* =========================================================
+   HOME - MANIFESTI SU TABLET
+   ========================================================= */
+
+@media (min-width: 601px) and (max-width: 800px) {
+
+    .manifesto-home {
+        margin-top: 35px;
+    }
+
+    .manifesti-composizione {
+        width: 390px;
+        height: 500px;
+        margin: 0 auto;
+        transform: none;
+    }
+
+    .manifesto-principale {
+        width: 270px;
+        top: 5px;
+        right: 10px;
+    }
+
+    .manifesto-secondario {
+        width: 285px;
+        top: 150px;
+        left: -5px;
+    }
+}
+/* =========================================================
+   CORREZIONI SMARTPHONE
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+    /* HOME - manifesti */
+
+    .manifesto-home {
+        margin-top: 45px;
+    }
+
+    .manifesti-composizione {
+        width: 310px;
+        height: 420px;
+        margin: 0 auto;
+        transform: none;
+    }
+
+    .manifesto-principale {
+        width: 220px;
+        top: 0;
+        right: 5px;
+    }
+
+    .manifesto-secondario {
+        width: 230px;
+        top: 125px;
+        left: 0;
+    }
+
+
+    /* ABOUT - gallery */
+
+    .carosello-restauro {
+        height: auto;
+    }
+
+    .coppia-restauro {
+        height: auto;
+        gap: 20px;
+    }
+
+    .foto-gallery {
+        width: 270px;
+        height: auto;
+    }
+
+}
